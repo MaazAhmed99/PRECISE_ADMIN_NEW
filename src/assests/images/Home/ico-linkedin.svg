@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="71" height="71" viewBox="0 0 71 71">
+  <defs>
+    <filter id="Rectangle_24" x="0" y="0" width="71" height="71" filterUnits="userSpaceOnUse">
+      <feOffset dx="-1" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.259"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_18777" data-name="Group 18777" transform="translate(18.512 14)">
+    <g transform="matrix(1, 0, 0, 1, -18.51, -14)" filter="url(#Rectangle_24)">
+      <g id="Rectangle_24-2" data-name="Rectangle 24" transform="translate(19 14)" fill="rgba(52,42,239,0)" stroke="#111" stroke-width="1">
+        <rect width="35" height="35" rx="17.5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="34" height="34" rx="17" fill="none"/>
+      </g>
+    </g>
+    <path id="linkedin" d="M3.247,13.674V4.448H.181v9.226ZM1.714,3.188A1.6,1.6,0,1,0,1.735,0a1.6,1.6,0,1,0-.04,3.188h.02Zm3.23,10.487H8.011V8.522a2.1,2.1,0,0,1,.1-.748A1.679,1.679,0,0,1,9.685,6.652c1.11,0,1.553.846,1.553,2.086v4.936h3.066V8.384c0-2.834-1.513-4.152-3.53-4.152A3.054,3.054,0,0,0,7.991,5.786h.021V4.448H4.945c.04.866,0,9.226,0,9.226Z" transform="translate(11.109 10.374)" fill="#111"/>
+  </g>
+</svg>

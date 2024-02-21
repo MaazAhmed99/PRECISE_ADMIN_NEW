@@ -1,0 +1,224 @@
+.admin-panel-page {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  padding: 1rem 0;
+}
+.admin-panel-page .logo-area {
+  background-color: #f2f6fa;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+.admin-panel-page .logo-area img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+.admin-panel-page .left-side {
+  box-shadow: 0px 3px 16px #0000001a;
+  border-radius: 16px;
+  min-height: 95vh;
+}
+.admin-panel-page .list-links {
+  border-radius: 16px;
+  padding: 2rem 1.25rem;
+}
+.admin-panel-page .list-links {
+  border-radius: 16px;
+  padding: 2rem 1.25rem;
+}
+.admin-panel-page .list-links .about-txt {
+  align-items: center;
+  align-self: center;
+  margin-bottom: 1rem;
+  color: #162b5a;
+  padding: 1rem;
+  font-size: 11px;
+  font-weight: bold;
+}
+.admin-panel-page .list-links .home-txt {
+  align-items: center;
+  align-self: center;
+  margin-bottom: 1rem;
+  color: #162b5a;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 11px;
+  font-weight: bold;
+}
+.admin-panel-page .list-links .active {
+  align-items: center;
+  align-self: center;
+  margin-bottom: 1rem;
+  color: #ffffff !important;
+  background-color: #162b5a !important;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 11px;
+  font-weight: bold;
+}
+.admin-panel-page .list-links .logout-txt {
+  align-items: center;
+  align-self: center;
+  margin-bottom: 1rem;
+  color: #ff0000;
+  padding: 1rem;
+  font-size: 11px;
+  font-weight: bold;
+}
+.admin-panel-page .list-links img {
+  position: relative;
+  top: -3px;
+  margin-right: 0.75rem;
+  background-color: #162b5a;
+  border-radius: 4px;
+  padding: 2px;
+}
+.admin-panel-page .user-area {
+  background-color: #f2f2f2;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.admin-panel-page .user-area .avatar {
+  background-color: #162b5a;
+  margin-right: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 50%;
+  height: 35px;
+  width: 40px;
+  padding: 1rem 1.25rem;
+  display: table;
+  text-transform: uppercase;
+}
+.admin-panel-page .user-area .user-name {
+  font-weight: bold;
+  color: #162b5a;
+  font-size: 14px;
+}
+.admin-panel-page .user-area .user-email {
+  font-weight: bold;
+  color: #000000;
+  font-size: 13px;
+}
+.admin-panel-page .user-area .text {
+  text-align: left;
+}
+.admin-panel-page .blue-btn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.35rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 14px;
+  align-items: center;
+}
+.admin-panel-page .blue-btn img {
+  position: relative;
+  top: -2px;
+  margin-left: 0.35rem;
+}
+.admin-panel-page .greeting-txt p {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.admin-panel-page .greeting-txt h3 {
+  font-size: 24px;
+  font-weight: bolder;
+}
+.admin-panel-page .main-content {
+  background-color: #ffffff;
+  padding: 0.75rem;
+  border-radius: 16px;
+  box-shadow: 0px 3px 16px #0000001a;
+  height: calc(100vh - 222px);
+  overflow-y: auto;
+}
+.admin-panel-page .main-content .download-file-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-self: center;
+  align-items: center;
+}
+.admin-panel-page .main-content .download-file-container p {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.admin-panel-page .main-content .download-file-container h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.admin-panel-page
+  .main-content
+  .download-file-container
+  .button-container
+  .btn-danger {
+  font-size: 14px;
+  background-color: #ff0000;
+}
+.admin-panel-page
+  .main-content
+  .download-file-container
+  .button-container
+  .btn-success {
+  font-size: 14px;
+  background-color: #098600;
+}
+.admin-panel-page .main-content .download-file-container .file-img {
+  height: 80px;
+}
+.admin-panel-page .custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure the modal is on top of everything */
+}
+
+.admin-panel-page .custom-modal .modal-content {
+  background-color: #fff; /* White background for the modal */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for the modal */
+  max-width: 400px; /* Adjust the max width as needed */
+}
+
+.admin-panel-page .custom-modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+.admin-panel-page .custom-modal .modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.admin-panel-page .paginate .active {
+  background-color: #162b5a !important;
+  color: #ffffff !important;
+}

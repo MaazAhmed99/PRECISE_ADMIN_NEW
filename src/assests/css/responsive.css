@@ -1,0 +1,193 @@
+/* media query css */
+
+@media only screen and (max-width: 992px) {
+  .auth-pages .login-contnr {
+    min-height: auto !important;
+  }
+  .auth-pages .auth_heading {
+    padding-top: 1.5rem !important;
+    font-size: 26px !important;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  .auth-pages .sgn-bx-hd {
+    font-size: 26px;
+  }
+  .auth-pages .mt-rez-signup {
+    margin-top: 0.5rem !important;
+  }
+  .Auth .auth-head {
+    font-size: 26px !important;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .header-small {
+    display: flex;
+  }
+  .header-full {
+    display: none;
+  }
+  .admin-panel-page .user-area {
+    justify-content: start !important;
+  }
+  .admin-panel-page .left-side {
+    min-height: auto !important;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .blue-btn {
+    font-size: 16px;
+  }
+  .Slider_top_custom_arrows_next {
+    height: 70px;
+    width: 30px;
+    background-repeat: no-repeat;
+  }
+  .Slider_top_custom_arrows_prev {
+    height: 70px;
+    width: 30px;
+    background-repeat: no-repeat;
+  }
+  .home-page .home-banner-section .slider-content h3 {
+    font-size: 17px;
+  }
+  .home-page .home-banner-section .slider-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .home-page .home-banner-section .slider-content {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  .home-page .home-banner-section .slider-content h1 {
+    font-size: 38px;
+  }
+  .home-page .ring-design-section .sub-heading {
+    margin-top: 1rem;
+  }
+  .home-page .ring-design-section .ring-corner {
+    z-index: -1;
+  }
+  .home-page .we-offer .content .branding {
+    position: static;
+    height: 120px;
+    width: auto;
+    margin: auto !important;
+    margin-bottom: 1rem !important;
+  }
+  .home-page .we-offer {
+    padding: 4rem 0;
+  }
+  .home-page .what-we-believe .content {
+    padding: 0 !important;
+  }
+  .home-page .what-we-believe .ps-4 {
+    padding-left: 1rem !important;
+  }
+  .home-page .what-we-believe .pe-4 {
+    padding-left: 1rem !important;
+  }
+  .home-page .what-we-believe .pb-5 {
+    padding-bottom: 1rem !important;
+  }
+  .home-page .what-we-believe .mb-5 {
+    margin-bottom: 1rem !important;
+  }
+  .home-page .what-we-believe .my-5 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .home-page .boxes-section .box {
+    padding: 3rem 1.5rem;
+  }
+  .home-page .must-checkoout .decoration-img {
+    z-index: -1;
+  }
+  .home-page .must-checkoout {
+    padding: 4rem 0;
+  }
+  .home-page .our-team .person-image {
+    margin-bottom: 10rem;
+  }
+  .home-page .our-team {
+    padding-bottom: 4rem;
+  }
+  .home-page .home-records {
+    padding: 4rem 0;
+  }
+  .footer-content .footer-logo {
+    width: auto;
+    height: 120px;
+  }
+  .footer-content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .footer-content ol,
+  ul {
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+  .home-page .about-us-banner h1 {
+    font-size: 38px;
+  }
+  .home-page .about-us-banner h3 {
+    font-size: 17px;
+  }
+  .about-page .ring-design-section {
+    padding-bottom: 1rem;
+  }
+  .about-page .dp-none-res {
+    display: none;
+  }
+  .individual-cost-page .form-container-main .step-container {
+    display: flex;
+    flex-direction: column !important;
+    position: relative;
+    /* padding-left: 1.5rem; */
+  }
+  .individual-cost-page .form-container-main .step-container .item-box {
+    padding: 0.5rem;
+  }
+  .individual-cost-page .form-container-main .step-container .line {
+    background-color: #162b5a;
+    position: absolute;
+    top: 11px;
+    z-index: -1;
+    height: 85% !important;
+    width: 3px !important;
+    left: 49px;
+  }
+  .individual-cost-page .form-container-main .step-container .item-box div {
+    position: relative;
+    left: 9%;
+    top: -15px;
+  }
+  .individual-cost-page .form-container-main {
+    padding-left: 1rem !important;
+    padding-top: 0 !important;
+  }
+
+  .admin-panel-page .blue-btn {
+    font-size: 12px !important;
+  }
+  .admin-panel-page .main-content {
+    height: auto !important;
+  }
+  .admin-panel-page
+    .main-content
+    .download-file-container
+    .button-container
+    .btn-danger,
+  .admin-panel-page
+    .main-content
+    .download-file-container
+    .button-container
+    .btn-success {
+    margin-bottom: 1rem;
+  }
+  .admin-panel-page .main-content .download-file-container p {
+    width: 90%;
+  }
+}

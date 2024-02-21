@@ -1,0 +1,118 @@
+.auth-pages.login_box small {
+  color: lightgray;
+}
+.auth-pages .inpt-fld {
+  font-size: smaller;
+}
+.auth-pages .inpt-fld::placeholder {
+  opacity: 0.8;
+  font-size: smaller;
+}
+.auth-pages {
+  background: #ffffff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+}
+.auth-pages .bt-login {
+  background-color: #162b5a;
+  color: white;
+  font-size: 12px;
+  padding: 0.75rem;
+  font-weight: bold;
+}
+
+.auth-pages .login-branding {
+  width: 20%;
+}
+.auth-pages .img-branding {
+  height: 25vh;
+  position: absolute;
+  right: -5%;
+  top: 10%;
+}
+.auth-pages .login_box h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+.auth-pages .bg-img {
+  background-image: url("../images/Auth/bg-img.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
+.auth-pages .login-contnr {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+.auth-pages .auth_heading {
+  font-size: 48px;
+  margin: 0;
+  padding-top: 15rem;
+  color: white;
+}
+.auth-pages .login_box {
+  background-color: white;
+  padding: 2rem;
+  /* margin-top: 10rem; */
+  padding-bottom: 2.5rem;
+}
+.auth-pages .sgn-bx-hd {
+  font-size: 32px;
+  font-weight: 900;
+}
+.auth-pages .orng-txt {
+  font-size: 13px;
+  color: #162b5a;
+  font-weight: bold;
+}
+.auth-pages .inpt-fld {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #88888866;
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+.auth-pages .inpt-fld:hover {
+  outline: 1px solid lightgray;
+}
+.auth-pages .line-main {
+  display: flex;
+}
+.auth-pages .line1 {
+  flex: 3;
+  border-bottom: 1px solid #707070bf;
+}
+.auth-pages .or {
+  font-size: 12px;
+  color: #9b9b9b;
+  flex: 1 1;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  top: 9px;
+}
+.auth-pages .line2 {
+  flex: 3;
+  border-bottom: 1px solid #707070bf;
+}
+.auth-pages .alrdd {
+  /* font-family: "Poppins-Medium"; */
+  font-size: 13px;
+}
+.auth-pages .txt-black {
+  color: black !important;
+}
+.auth-pages .inpt-fld.error {
+  border-color: red;
+}
+.auth-pages .text-danger {
+  color: red;
+  font-size: smaller;
+}
