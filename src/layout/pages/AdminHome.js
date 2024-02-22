@@ -44,18 +44,21 @@ const AdminHome = () => {
   //   setCurrentPage(page);
   // };
 
-  const getTaxationLsiting = () => {
+  const getTaxationLsiting = (index) => {
     setLoader(true);
     try {
       axios
-        .get("taxation/request/admin", headersWithToken(token))
+        .get(
+          `taxation/request/admin?page=${index ? index : 1}`,
+          headersWithToken(token)
+        )
         .then((res) => {
           setTaxationListing(res?.taxationRequests?.docs);
-          setTaxationMeta(res?.meta);
-          // console.log(
-          //   "res?.data?.taxationRequestsres?.data?.taxationRequests",
-          //   res
-          // );
+          setTaxationMeta(res?.taxationRequests?.meta);
+          console.log(
+            "res?.data?.taxationRequestsres?.data?.taxationRequests",
+            res
+          );
           setLoader(false);
         })
         .catch((err) => {
@@ -68,7 +71,7 @@ const AdminHome = () => {
     }
   };
   const getUserLsiting = (index) => {
-    console.log(index, "indexindexindexindex");
+    // console.log(index, "indexindexindexindex");
     setLoader(true);
     try {
       axios
@@ -91,14 +94,22 @@ const AdminHome = () => {
 
   const userPaginate = (index) => {
     // setCurrentPage(index);
-    console.log("userPaginateuserPaginate", index);
+    // console.log("userPaginateuserPaginate", index);
     getUserLsiting(index + 1);
+  };
+
+  const taxPaginate = (index) => {
+    // setCurrentPage(index);
+    console.log("taxPaginatetaxPaginate", index);
+    getTaxationLsiting(index + 1);
   };
 
   useEffect(() => {
     getUserLsiting();
     getTaxationLsiting();
   }, []);
+
+  console.log(taxationMeta, "taxationMetataxationMetataxationMeta");
 
   return (
     <div className="admin-panel-page">
@@ -177,6 +188,25 @@ const AdminHome = () => {
                       </TableBody>
                     </Table>
                   </TableContainer>
+                  <div className="col-lg-12 mt-3 text-end paginate">
+                    {taxationMeta
+                      ? [...Array(taxationMeta?.totalPages)].map((item, i) => {
+                          console.log(i);
+                          return (
+                            <button
+                              onClick={() => taxPaginate(i)}
+                              className={
+                                taxationMeta?.page == i + 1
+                                  ? "btn btn-light active me-2"
+                                  : "btn btn-light me-2"
+                              }
+                            >
+                              {i + 1}
+                            </button>
+                          );
+                        })
+                      : ""}
+                  </div>
                   {/* <div>{meta}</div> */}
                   <h3 className="fw-bold mb-3 mt-5">Users List</h3>
                   <TableContainer component={Paper}>
