@@ -7,7 +7,7 @@ const PersonalInformation = () => {
   const reduxData = useSelector(
     (state) => state.independentContractorSlice.individualCost.step1
   );
-  console.log(reduxData, "reduxDatareduxDatareduxDatareduxData");
+  // console.log(reduxData, "reduxDatareduxDatareduxDatareduxData");
   const [fields, setFields] = useState(reduxData.fields);
   const [spouseFields, setSpouseFields] = useState(reduxData.spouseFields);
   const [errors, setErrors] = useState({});

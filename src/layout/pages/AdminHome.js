@@ -55,10 +55,10 @@ const AdminHome = () => {
         .then((res) => {
           setTaxationListing(res?.taxationRequests?.docs);
           setTaxationMeta(res?.taxationRequests?.meta);
-          console.log(
-            "res?.data?.taxationRequestsres?.data?.taxationRequests",
-            res
-          );
+          // console.log(
+          //   "res?.data?.taxationRequestsres?.data?.taxationRequests",
+          //   res
+          // );
           setLoader(false);
         })
         .catch((err) => {
@@ -79,7 +79,7 @@ const AdminHome = () => {
         .then((res) => {
           setUserListing(res?.users?.docs);
           setUserMeta(res?.users?.meta);
-          console.log(res?.users?.meta, "res?.users?.metares?.users?.meta");
+          // console.log(res?.users?.meta, "res?.users?.metares?.users?.meta");
           setLoader(false);
         })
         .catch((err) => {
@@ -100,7 +100,7 @@ const AdminHome = () => {
 
   const taxPaginate = (index) => {
     // setCurrentPage(index);
-    console.log("taxPaginatetaxPaginate", index);
+    // console.log("taxPaginatetaxPaginate", index);
     getTaxationLsiting(index + 1);
   };
 
@@ -109,7 +109,7 @@ const AdminHome = () => {
     getTaxationLsiting();
   }, []);
 
-  console.log(taxationMeta, "taxationMetataxationMetataxationMeta");
+  // console.log(taxationMeta, "taxationMetataxationMetataxationMeta");
 
   return (
     <div className="admin-panel-page">
@@ -161,7 +161,9 @@ const AdminHome = () => {
                       <TableBody>
                         {taxationListing?.map((row, index) => (
                           <TableRow key={index}>
-                            <TableCell align="left">{row?.fullName}</TableCell>
+                            <TableCell align="left">
+                              {row?.user?.username}
+                            </TableCell>
                             <TableCell align="left">
                               {row?.taxation_type}
                             </TableCell>
@@ -191,7 +193,7 @@ const AdminHome = () => {
                   <div className="col-lg-12 mt-3 text-end paginate">
                     {taxationMeta
                       ? [...Array(taxationMeta?.totalPages)].map((item, i) => {
-                          console.log(i);
+                          // console.log(i);
                           return (
                             <button
                               onClick={() => taxPaginate(i)}
@@ -244,7 +246,7 @@ const AdminHome = () => {
                 <div className="col-lg-12 mt-3 text-end paginate">
                   {userMeta
                     ? [...Array(userMeta?.totalPages)].map((item, i) => {
-                        console.log(i);
+                        // console.log(i);
                         return (
                           <button
                             onClick={() => userPaginate(i)}

@@ -97,10 +97,10 @@ const FilePreview = () => {
       setLoader(false);
     }
   };
-  console.log(
-    data,
-    "data?.isPreviewAccepted?.valuedata?.isPreviewAccepted?.valuedata?.isPreviewAccepted?.value"
-  );
+  // console.log(
+  //   data,
+  //   "data?.isPreviewAccepted?.valuedata?.isPreviewAccepted?.valuedata?.isPreviewAccepted?.value"
+  // );
   // Render the component
   return (
     <div className="admin-panel-page">
@@ -230,7 +230,8 @@ const FilePreview = () => {
                 {data?.dob?.value ? (
                   <div className="col-lg-6">
                     <p className="mb-1">
-                      <b> Date of Birth </b> : {data?.dob?.value || ""}
+                      <b> Date of Birth </b> :{" "}
+                      {data?.dob?.value.slice(0, 10) || ""}
                     </p>
                   </div>
                 ) : null}
@@ -238,7 +239,7 @@ const FilePreview = () => {
                   <div className="col-lg-6">
                     <p className="mb-1">
                       <b>Last Year Tax Return {" : "}</b>
-                      <a href="#" download={data?.lastYearTaxReturn?.value}>
+                      <a href={`${data?.lastYearTaxReturn?.value}`}>
                         download file
                       </a>
                     </p>
@@ -323,6 +324,55 @@ const FilePreview = () => {
                   </>
                 ) : null} */}
 
+                {/* business owners */}
+
+                {data?.businessOwners?.[0] ? (
+                  <>
+                    <hr />
+                    <div className="col-lg-12">
+                      <p className="mb-3 fw-bold">Business Owner Details :</p>
+                    </div>
+                    {data?.businessOwners?.map((item) => {
+                      return (
+                        <>
+                          {item?.ownerAddress?.value && (
+                            <div className="col-lg-6">
+                              <p className="mb-1">
+                                <b> Owner Address : </b>
+                                {item?.ownerAddress?.value}
+                              </p>
+                            </div>
+                          )}
+                          {item?.ownerName?.value && (
+                            <div className="col-lg-6">
+                              <p className="mb-1">
+                                <b> Owner Name : </b>
+                                {item?.ownerName?.value}
+                              </p>
+                            </div>
+                          )}
+                          {item?.ownerSSN?.value && (
+                            <div className="col-lg-6">
+                              <p className="mb-1">
+                                <b> Owner SSN : </b>
+                                {item?.ownerSSN?.value}
+                              </p>
+                            </div>
+                          )}
+                          {item?.ownerShare?.value && (
+                            <div className="col-lg-6">
+                              <p className="mb-1">
+                                <b> Owner Share : </b>
+                                {item?.ownerShare?.value}
+                              </p>
+                            </div>
+                          )}
+                        </>
+                      );
+                    })}
+                  </>
+                ) : null}
+
                 {/* business information */}
 
                 {data?.businessInfo ? (
@@ -372,11 +422,7 @@ const FilePreview = () => {
                         <p className="mb-1">
                           <b> Any Form of 1099 : </b>
                           <a
-                            href="#"
-                            download={
-                              data?.businessInfo?.value?.forms1099?.[0]?.[0]
-                                .value
-                            }
+                            href={`${data?.businessInfo?.value?.forms1099?.[0]?.[0].value}`}
                           >
                             download file
                           </a>
@@ -388,11 +434,7 @@ const FilePreview = () => {
                         <p className="mb-1">
                           <b> Registration Letter Document : </b>
                           <a
-                            href="#"
-                            download={
-                              data?.businessInfo?.value?.registrationLetterDoc
-                                .value
-                            }
+                            href={`${data?.businessInfo?.value?.registrationLetterDoc.value}`}
                           >
                             download file
                           </a>
@@ -426,11 +468,10 @@ const FilePreview = () => {
                         <p className="mb-1">
                           <b> Profit Loss Document : </b>
                           <a
-                            href="#"
-                            download={
-                              data?.businessExpense?.value
-                                ?.profitLossStatementDoc?.value
-                            }
+                            href={`${data?.businessExpense?.value?.profitLossStatementDoc?.value}`}
+                            // download={
+
+                            // }
                           >
                             download file
                           </a>
@@ -457,11 +498,10 @@ const FilePreview = () => {
                           <p className="mb-1">
                             <b> Balance Sheet Document : </b>
                             <a
-                              href="#"
-                              download={
-                                data?.businessFinancialInfo?.value
-                                  ?.balanceSheetDoc?.value
-                              }
+                              href={`${data?.businessFinancialInfo?.value?.balanceSheetDoc?.value}`}
+                              // download={
+
+                              // }
                             >
                               download file
                             </a>
@@ -475,11 +515,10 @@ const FilePreview = () => {
                           <p className="mb-1">
                             <b> Bank Statement Document : </b>
                             <a
-                              href="#"
-                              download={
-                                data?.businessFinancialInfo?.value
-                                  ?.bankStatementDoc?.value
-                              }
+                              href={`${data?.businessFinancialInfo?.value?.bankStatementDoc?.value}`}
+                              // download={
+
+                              // }
                             >
                               download file
                             </a>
@@ -501,10 +540,10 @@ const FilePreview = () => {
                       <p className="mb-1">
                         <b> Other Income Document : </b>
                         <a
-                          href="#"
-                          download={
-                            data?.income?.value?.otherIncomeDoc?.[0]?.value
-                          }
+                          href={`${data?.income?.value?.otherIncomeDoc?.[0]?.value}`}
+                          // download={
+
+                          // }
                         >
                           download file
                         </a>
@@ -515,8 +554,8 @@ const FilePreview = () => {
                       <p className="mb-1">
                         <b> W2 Document : </b>
                         <a
-                          href="#"
-                          download={data?.income?.value?.w2Doc?.[0]?.value}
+                          href={`${data?.income?.value?.w2Doc?.[0]?.value}`}
+                          // download={}
                         >
                           download file
                         </a>
@@ -539,9 +578,7 @@ const FilePreview = () => {
                           <p className="mb-1">
                             <b>{item?.label?.value} </b>
                             {" : "}{" "}
-                            <a href="#" download={item?.value?.value}>
-                              download file
-                            </a>
+                            <a href={`${item?.value?.value}`}>download file</a>
                           </p>
                         </div>
                       );
@@ -563,8 +600,8 @@ const FilePreview = () => {
                           <b>DIV1099 </b>
                           {" : "}{" "}
                           <a
-                            href="#"
-                            download={data?.commonDoc?.value?.DIV1099?.value}
+                            href={`${data?.commonDoc?.value?.DIV1099?.value}`}
+                            // download={}
                           >
                             download file
                           </a>
@@ -577,8 +614,8 @@ const FilePreview = () => {
                           <b>INT1099</b>
                           {" : "}{" "}
                           <a
-                            href="#"
-                            download={data?.commonDoc?.value?.INT1099?.value}
+                            href={`${data?.commonDoc?.value?.INT1099?.value}`}
+                            // download={}
                           >
                             download file
                           </a>
@@ -591,8 +628,8 @@ const FilePreview = () => {
                           <b>K1099</b>
                           {" : "}{" "}
                           <a
-                            href="#"
-                            download={data?.commonDoc?.value?.K1099?.value}
+                            href={`${data?.commonDoc?.value?.K1099?.value}`}
+                            // download={}
                           >
                             download file
                           </a>
@@ -605,8 +642,8 @@ const FilePreview = () => {
                           <b>MISC1099</b>
                           {" : "}{" "}
                           <a
-                            href="#"
-                            download={data?.commonDoc?.value?.MISC1099?.value}
+                            href={`${data?.commonDoc?.value?.MISC1099?.value}`}
+                            // download={}
                           >
                             download file
                           </a>
@@ -619,8 +656,8 @@ const FilePreview = () => {
                           <b>R1099</b>
                           {" : "}{" "}
                           <a
-                            href="#"
-                            download={data?.commonDoc?.value?.R1099?.value}
+                            href={`${data?.commonDoc?.value?.R1099?.value}`}
+                            // download={}
                           >
                             download file
                           </a>
@@ -633,8 +670,8 @@ const FilePreview = () => {
                           <b>T1098</b>
                           {" : "}{" "}
                           <a
-                            href="#"
-                            download={data?.commonDoc?.value?.R1099?.value}
+                            href={`${data?.commonDoc?.value?.R1099?.value}`}
+                            // download={}
                           >
                             download file
                           </a>

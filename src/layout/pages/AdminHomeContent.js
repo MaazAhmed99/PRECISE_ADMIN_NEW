@@ -37,7 +37,7 @@ const AdminHomeContent = () => {
         .get("taxation-types")
         .then((res) => {
           setLoader(false);
-          console.log(res);
+          // console.log(res);
           setTaxation(res?.data);
         })
         .catch((err) => {
@@ -68,7 +68,7 @@ const AdminHomeContent = () => {
       axios
         .put(`taxation-types/${id}`, data, headersWithToken(token))
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           getTaxations();
           setLoader(false);
           //   setTaxation(res?.data?.data);

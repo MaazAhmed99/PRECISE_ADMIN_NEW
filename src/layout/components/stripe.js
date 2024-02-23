@@ -23,7 +23,7 @@ const PaymentForm = () => {
       });
 
       // Handle the payment method, e.g., send it to your server for payment processing.
-      console.log("PaymentMethod:", paymentMethod);
+      // console.log("PaymentMethod:", paymentMethod);
       setPaymentError(null); // Reset any previous errors
     } catch (error) {
       console.error(error);
