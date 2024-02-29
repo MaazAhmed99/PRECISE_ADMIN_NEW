@@ -37,6 +37,8 @@ import info from "../images/Admin/info.svg";
 import logout from "../images/Admin/logout.svg";
 import exclaim from "../images/Admin/exclaim.svg";
 import file from "../images/Admin/file.png";
+import users from "../images/Admin/users.svg";
+import fileMenu from "../images/Admin/file-menu.svg";
 
 export {
   // common images
@@ -84,4 +86,6 @@ export {
   home,
   exclaim,
   file,
+  users,
+  fileMenu,
 };

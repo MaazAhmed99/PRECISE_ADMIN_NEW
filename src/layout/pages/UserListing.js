@@ -23,7 +23,7 @@ import Paper from "@mui/material/Paper";
 import { headersWithToken } from "../../services/auth";
 import { useLoader } from "../../services/Loader/LoaderContext";
 
-const AdminHome = () => {
+const UserListing = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const setLoader = useLoader();
@@ -44,32 +44,6 @@ const AdminHome = () => {
   //   setCurrentPage(page);
   // };
 
-  const getTaxationLsiting = (index) => {
-    setLoader(true);
-    try {
-      axios
-        .get(
-          `taxation/request/admin?page=${index ? index : 1}`,
-          headersWithToken(token)
-        )
-        .then((res) => {
-          setTaxationListing(res?.taxationRequests?.docs);
-          setTaxationMeta(res?.taxationRequests?.meta);
-          // console.log(
-          //   "res?.data?.taxationRequestsres?.data?.taxationRequests",
-          //   res
-          // );
-          setLoader(false);
-        })
-        .catch((err) => {
-          console.log(err);
-          setLoader(false);
-        });
-    } catch (e) {
-      setLoader(false);
-      console.log(e);
-    }
-  };
   const getUserLsiting = (index) => {
     // console.log(index, "indexindexindexindex");
     setLoader(true);
@@ -98,15 +72,8 @@ const AdminHome = () => {
     getUserLsiting(index + 1);
   };
 
-  const taxPaginate = (index) => {
-    // setCurrentPage(index);
-    // console.log("taxPaginatetaxPaginate", index);
-    getTaxationLsiting(index + 1);
-  };
-
   useEffect(() => {
     getUserLsiting();
-    getTaxationLsiting();
   }, []);
 
   // console.log(taxationMeta, "taxationMetataxationMetataxationMeta");
@@ -142,63 +109,8 @@ const AdminHome = () => {
             <div className="main-content mt-4">
               <div className="row">
                 <div className="col-lg-12 ">
-                  <h3 className="fw-bold mb-3">Taxation Requests</h3>
+                  <h3 className="fw-bold mb-3 mt-0">Users List</h3>
                   <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} aria-label="caption table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell align="left">User Names</TableCell>
-                          <TableCell align="left">Taxation Type</TableCell>
-                          <TableCell align="left">Last Update</TableCell>
-                          <TableCell align="left">Action</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {taxationListing?.map((row, index) => (
-                          <TableRow key={index}>
-                            <TableCell align="left">
-                              {row?.user?.username}
-                            </TableCell>
-                            <TableCell align="left">
-                              {row?.taxation_type}
-                            </TableCell>
-                            <TableCell align="left">
-                              {row?.createdAt?.slice(0, 10)}
-                            </TableCell>
-                            <TableCell
-                              onClick={() =>
-                                navigate(`/file-preview/${row?.id}`)
-                              }
-                              className="cursor_pointer"
-                              align="left"
-                            >
-                              <button className="btn btn-light">View</button>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                  <div className="col-lg-12 mt-3 text-end paginate">
-                    {taxationMeta
-                      ? [...Array(taxationMeta?.totalPages)].map((item, i) => {
-                          return (
-                            <button
-                              onClick={() => taxPaginate(i)}
-                              className={
-                                taxationMeta?.page == i + 1
-                                  ? "btn btn-light active me-2"
-                                  : "btn btn-light me-2"
-                              }
-                            >
-                              {i + 1}
-                            </button>
-                          );
-                        })
-                      : ""}
-                  </div>
-                  {/* <h3 className="fw-bold mb-3 mt-5">Users List</h3> */}
-                  {/* <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }} aria-label="caption table">
                       <TableHead>
                         <TableRow>
@@ -228,11 +140,12 @@ const AdminHome = () => {
                         ))}
                       </TableBody>
                     </Table>
-                  </TableContainer> */}
+                  </TableContainer>
                 </div>
-                {/* <div className="col-lg-12 mt-3 text-end paginate">
+                <div className="col-lg-12 mt-3 text-end paginate">
                   {userMeta
                     ? [...Array(userMeta?.totalPages)].map((item, i) => {
+                        // console.log(i);
                         return (
                           <button
                             onClick={() => userPaginate(i)}
@@ -247,7 +160,7 @@ const AdminHome = () => {
                         );
                       })
                     : ""}
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
@@ -257,4 +170,4 @@ const AdminHome = () => {
   );
 };
 
-export default AdminHome;
+export default UserListing;

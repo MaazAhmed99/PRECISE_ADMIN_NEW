@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { home, logo, logout } from "../../assests/media-constants";
+import {
+  fileMenu,
+  home,
+  logo,
+  logout,
+  users,
+} from "../../assests/media-constants";
 import { useLocation, useNavigate } from "react-router-dom";
 import APP_CONSTANTS from "../../constants/app-constant";
 import { useDispatch, useSelector } from "react-redux";
@@ -45,7 +51,17 @@ const SideMenu = () => {
               : "home-txt cursor_pointer"
           }
         >
-          <img src={home} /> Tax Content
+          <img src={fileMenu} width={25} /> Tax Content
+        </p>
+        <p
+          onClick={() => navigate("/users")}
+          className={
+            location.pathname === "/users"
+              ? "active cursor_pointer"
+              : "home-txt cursor_pointer"
+          }
+        >
+          <img src={users} width={25} /> Users
         </p>
         <p
           onClick={

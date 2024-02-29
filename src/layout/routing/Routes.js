@@ -22,6 +22,7 @@ import NewPassword from "../pages/NewPassword";
 import AdminHomeContent from "../pages/AdminHomeContent";
 import FilePreview from "../pages/FilePreview";
 import UserPage from "../pages/UserPage";
+import UserListing from "../pages/UserListing";
 
 const MainRoutes = () => {
   const [getToken, setGetToken] = useState(
@@ -69,6 +70,12 @@ const MainRoutes = () => {
       authRoutes: true,
       blockAfterLogin: false,
       element: <UserPage />,
+    },
+    {
+      path: "/users",
+      authRoutes: true,
+      blockAfterLogin: false,
+      element: <UserListing />,
     },
     {
       path: "/",

@@ -115,21 +115,26 @@ const AdminHomeContent = () => {
               </div>
             </div>
             <div className="main-content mt-4">
+              <div className="row">
+                <div className="col-lg-12">
+                  <h3 className="fw-bold mb-3 mt-0">Edit Taxation</h3>
+                </div>
+              </div>
               {taxation &&
-                taxation.map((tax) => (
-                  <div className="row" key={tax.id}>
+                taxation?.map((tax) => (
+                  <div className="row" key={tax?.id}>
                     <div className="col-lg-12">
-                      <h5>Taxation Type {tax.displayName}</h5>
+                      <h5>Taxation Type {tax?.displayName}</h5>
                     </div>
                     <div className="col-lg-6 ">
                       <p className="mt-2">Price</p>
                       <input
                         className="form-control"
-                        value={tax.price}
+                        value={tax?.price}
                         type="number"
                         // disabled
                         onChange={(e) =>
-                          handleInputChange(tax.id, "price", e.target.value)
+                          handleInputChange(tax?.id, "price", e.target.value)
                         }
                       />
                     </div>
@@ -137,17 +142,17 @@ const AdminHomeContent = () => {
                       <p className="mt-2">Display Name</p>
                       <input
                         className="form-control"
-                        value={tax.displayName}
+                        value={tax?.displayName}
                         onChange={(e) =>
                           handleInputChange(
-                            tax.id,
+                            tax?.id,
                             "displayName",
                             e.target.value
                           )
                         }
                       />
                     </div>
-                    <div className="col-lg-12 my-3">
+                    {/* <div className="col-lg-12 my-3">
                       <p className="mt-2">Description</p>
                       <textarea
                         rows={4}
@@ -162,8 +167,8 @@ const AdminHomeContent = () => {
                           )
                         }
                       />
-                    </div>
-                    <div className="col-lg-12 text-end">
+                    </div> */}
+                    <div className="col-lg-12 text-end mt-3">
                       <button
                         onClick={() =>
                           submitUpdate(tax.id, {
