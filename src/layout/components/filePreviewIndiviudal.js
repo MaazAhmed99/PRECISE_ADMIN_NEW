@@ -375,31 +375,36 @@ const FilePreviewIndiviudal = (props) => {
           <div className="col-lg-12">
             <p className="mb-3 fw-bold">Income Document :</p>
           </div>
-          <div className="col-lg-6">
-            <p className="mb-1">
-              <b> Other Income Document : </b>
-              <a
-                href={`${data?.income?.value?.otherIncomeDoc?.[0]?.value}`}
-                // download={
+          {data?.income?.value?.otherIncomeDoc?.[0]?.value ? (
+            <div className="col-lg-6">
+              <p className="mb-1">
+                <b> Other Income Document : </b>
+                {data?.income?.value?.otherIncomeDoc.map((item, index) => {
+                  return (
+                    <div>
+                      <a href={`${item?.value}`}>download file</a>
+                    </div>
+                  );
+                })}
+              </p>
+            </div>
+          ) : null}
 
-                // }
-              >
-                download file
-              </a>
-            </p>
-          </div>
-
-          <div className="col-lg-6">
-            <p className="mb-1">
-              <b> W2 Document : </b>
-              <a
-                href={`${data?.income?.value?.w2Doc?.[0]?.value}`}
-                // download={}
-              >
-                download file
-              </a>
-            </p>
-          </div>
+          {data?.income?.value?.otherIncomeDoc?.[0]?.value ? (
+            <div className="col-lg-6">
+              <p className="mb-1">
+                <b> W2 Document : </b>
+                {data?.income?.value?.w2Doc.map((item, index) => {
+                  console.log("itemitemitemitemitem", item);
+                  return (
+                    <div>
+                      <a href={`${item?.value}`}>download file</a>
+                    </div>
+                  );
+                })}
+              </p>
+            </div>
+          ) : null}
         </>
       ) : null}
 

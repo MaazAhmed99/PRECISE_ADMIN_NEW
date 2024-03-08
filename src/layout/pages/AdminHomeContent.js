@@ -124,7 +124,7 @@ const AdminHomeContent = () => {
                 taxation?.map((tax) => (
                   <div className="row" key={tax?.id}>
                     <div className="col-lg-12">
-                      <h5>Taxation Type {tax?.displayName}</h5>
+                      <h5>Taxation Type {tax?.taxation_type}</h5>
                     </div>
                     <div className="col-lg-6 ">
                       <p className="mt-2">Price</p>

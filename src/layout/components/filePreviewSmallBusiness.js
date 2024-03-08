@@ -1,12 +1,9 @@
 import React from "react";
 
-const FilePreviewIndependent = (props) => {
+const FilePreviewSmallBusiness = (props) => {
   const { data } = props;
-  //   console.log("xxxxxxxxxxxxxxxxxxxxx", data);
   return (
     <>
-      {/* general fields */}
-
       {data?.user?.value?.username?.value ? (
         <div className="col-lg-6">
           <p className="mb-1">
@@ -36,22 +33,6 @@ const FilePreviewIndependent = (props) => {
           <p className="mb-1">
             <b>Zip Code </b>
             {" : "} {data?.zipCode?.value}
-          </p>
-        </div>
-      ) : null}
-      {data?.country?.value ? (
-        <div className="col-lg-6">
-          <p className="mb-1">
-            <b>Country </b>
-            {" : "} {data?.country?.value}
-          </p>
-        </div>
-      ) : null}
-      {data?.state?.value ? (
-        <div className="col-lg-6">
-          <p className="mb-1">
-            <b>State </b>
-            {" : "} {data?.state?.value}
           </p>
         </div>
       ) : null}
@@ -85,76 +66,36 @@ const FilePreviewIndependent = (props) => {
           </p>
         </div>
       ) : null}
-      {data?.account?.value ? (
-        <div className="col-lg-6">
-          <p className="mb-1">
-            <b> Account </b> : {data?.account?.value}
-          </p>
-        </div>
-      ) : null}
-      {data?.checkingOrSaving?.value ? (
-        <div className="col-lg-6">
-          <p className="mb-1">
-            <b> Checking or Saving </b> : {data?.checkingOrSaving?.value}
-          </p>
-        </div>
-      ) : null}
-      {data?.mailingAddress?.value ? (
-        <div className="col-lg-6">
-          <p className="mb-1">
-            <b> Mailing Address </b> : {data?.mailingAddress?.value}
-          </p>
-        </div>
-      ) : null}
-      {data?.nameOfFinancialInstitution?.value ? (
-        <div className="col-lg-6">
-          <p className="mb-1">
-            <b> Name of Financial Institution </b> :{" "}
-            {data?.nameOfFinancialInstitution?.value}
-          </p>
-        </div>
-      ) : null}
-      {data?.routing?.value ? (
-        <div className="col-lg-6">
-          <p className="mb-1">
-            <b> Routing </b> : {data?.routing?.value}
-          </p>
-        </div>
-      ) : null}
 
       {/* spouse details */}
 
       {data?.spouse && data?.spouse?.length > 0 ? (
         <>
-          <hr />
-          <div className="col-lg-12">
-            <p className="mb-3 fw-bold">Spouse :</p>
-          </div>
-          {data?.spouse?.map((item, index) => {
+          {data?.spouse.map((item, index) => {
             return (
               <>
                 <div className="col-lg-6">
                   <p className="mb-1">
                     <b> Full Name : </b>
-                    {item?.fullName?.value}
+                    {item?.fullName}
                   </p>
                 </div>
                 <div className="col-lg-6">
                   <p className="mb-1">
                     <b> Social Security Number : </b>
-                    {item?.socialSecurityNumber?.value}
+                    {item?.socialSecurityNumber}
                   </p>
                 </div>
                 <div className="col-lg-6">
                   <p className="mb-1">
                     <b> Date of Birth : </b>
-                    {item?.dob?.value}
+                    {item?.dob}
                   </p>
                 </div>
                 <div className="col-lg-6">
                   <p className="mb-1">
                     <b> Relationship To You: </b>
-                    {item?.relationship?.value}
+                    {item?.relationship}
                   </p>
                 </div>
               </>
@@ -163,39 +104,39 @@ const FilePreviewIndependent = (props) => {
         </>
       ) : null}
 
-      {/* dependent section */}
+      {/* dependents */}
 
       {data?.dependents?.length > 0 ? (
         <>
           <hr />
           <div className="col-lg-12">
-            <p className="mb-3 fw-bold">Dependents :</p>
+            <p className="mb-3 fw-bold">Dependents Details :</p>
           </div>
           {data?.dependents?.map((item, index) => {
             return (
               <>
                 <div className="col-lg-6">
                   <p className="mb-1">
-                    <b>Date of Birth </b>
-                    {" : "} {item?.dob?.value}
+                    <b> Full Name : </b>
+                    {item?.fullName}
                   </p>
                 </div>
                 <div className="col-lg-6">
                   <p className="mb-1">
-                    <b>Full Name </b>
-                    {" : "} {item?.fullName?.value}
+                    <b> Social Security Number : </b>
+                    {item?.socialSecurityNumber}
                   </p>
                 </div>
                 <div className="col-lg-6">
                   <p className="mb-1">
-                    <b>Relationship </b>
-                    {" : "} {item?.relationship?.value}
+                    <b> Date of Birth : </b>
+                    {item?.dob}
                   </p>
                 </div>
                 <div className="col-lg-6">
                   <p className="mb-1">
-                    <b>Social Security Number </b>
-                    {" : "} {item?.socialSecurityNumber?.value}
+                    <b> Relationship To You: </b>
+                    {item?.relationship}
                   </p>
                 </div>
               </>
@@ -296,78 +237,27 @@ const FilePreviewIndependent = (props) => {
               </p>
             </div>
           ) : null}
-          {data?.businessInfo?.value?.address?.value ? (
-            <div className="col-lg-6">
-              <p className="mb-1">
-                <b> Address : </b>
-                {data?.businessInfo?.value?.address?.value}
-              </p>
-            </div>
-          ) : null}
-          {data?.businessInfo?.value?.email?.value ? (
-            <div className="col-lg-6">
-              <p className="mb-1">
-                <b> Email : </b>
-                {data?.businessInfo?.value?.email?.value}
-              </p>
-            </div>
-          ) : null}
-          {data?.businessInfo?.value?.phone?.value ? (
-            <div className="col-lg-6">
-              <p className="mb-1">
-                <b> Phone : </b>
-                {data?.businessInfo?.value?.phone?.value}
-              </p>
-            </div>
-          ) : null}
 
-          {data?.businessInfo?.value?.forms1099?.[0]?.[0]?.value ? (
+          {data?.businessInfo?.value?.forms1099?.[0].value ? (
             <div className="col-lg-6">
               <p className="mb-1">
                 <b> Any Form of 1099 : </b>
+                {data?.businessInfo?.value?.forms1099?.map((item, index) => {
+                  return (
+                    <a key={index + 1000} href={`${item?.value}`}>
+                      download file
+                    </a>
+                  );
+                })}
+              </p>
+            </div>
+          ) : null}
+          {data?.businessInfo?.value?.registrationLetterDoc.value ? (
+            <div className="col-lg-6">
+              <p className="mb-1">
+                <b> Registration Letter Document : </b>
                 <a
-                  href={`${data?.businessInfo?.value?.forms1099?.[0]?.[0]?.value}`}
-                >
-                  download file
-                </a>
-              </p>
-            </div>
-          ) : null}
-        </>
-      ) : null}
-
-      {/* business vehicel */}
-
-      {data?.businessVehicleInfo ? (
-        <>
-          <hr />
-          <div className="col-lg-12">
-            <p className="mb-3 fw-bold">Business Details :</p>
-          </div>
-          {data?.businessVehicleInfo?.value?.totalMiles?.value ? (
-            <div className="col-lg-6">
-              <p className="mb-1">
-                <b> Total Mile : </b>
-                {data?.businessVehicleInfo?.value?.totalMiles?.value}
-              </p>
-            </div>
-          ) : null}
-
-          {data?.businessVehicleInfo?.value?.usePercentage?.value ? (
-            <div className="col-lg-6">
-              <p className="mb-1">
-                <b> Use Percentage : </b>
-                {data?.businessVehicleInfo?.value?.usePercentage?.value}
-              </p>
-            </div>
-          ) : null}
-
-          {data?.businessVehicleInfo?.value?.registrationDoc?.value ? (
-            <div className="col-lg-6">
-              <p className="mb-1">
-                <b> Registration Document : </b>
-                <a
-                  href={`${data?.businessVehicleInfo?.value?.registrationDoc?.value}`}
+                  href={`${data?.businessInfo?.value?.registrationLetterDoc.value}`}
                 >
                   download file
                 </a>
@@ -385,28 +275,21 @@ const FilePreviewIndependent = (props) => {
           <div className="col-lg-12">
             <p className="mb-3 fw-bold">Business Expense :</p>
           </div>
-          {data?.businessExpense?.value?.bankRecordDoc?.value ? (
+          {data?.businessExpense?.value?.profitLossStatementDoc?.value ? (
             <div className="col-lg-6">
               <p className="mb-1">
-                <b> Bank Record : </b>
-                <a
-                  href={`${data?.businessExpense?.value?.bankRecordDoc?.value}`}
-                  // download={
-
-                  // }
-                >
-                  download file
-                </a>
+                <b> Details : </b>
+                {data?.businessExpense?.value?.details?.value}
               </p>
             </div>
           ) : null}
 
-          {data?.businessExpense?.value?.expenseDoc?.value ? (
+          {data?.businessExpense?.value?.profitLossStatementDoc?.value ? (
             <div className="col-lg-6">
               <p className="mb-1">
-                <b> Expense Document : </b>
+                <b> Profit Loss Document : </b>
                 <a
-                  href={`${data?.businessExpense?.value?.expenseDoc?.value}`}
+                  href={`${data?.businessExpense?.value?.profitLossStatementDoc?.value}`}
                   // download={
 
                   // }
@@ -428,12 +311,12 @@ const FilePreviewIndependent = (props) => {
             <div className="col-lg-12">
               <p className="mb-3 fw-bold">Business Financials Informations :</p>
             </div>
-            {data?.businessFinancialInfo?.value?.profitAndLossDoc?.value ? (
+            {data?.businessFinancialInfo?.value?.balanceSheetDoc?.value ? (
               <div className="col-lg-6">
                 <p className="mb-1">
-                  <b> Profit & Loss Document : </b>
+                  <b> Balance Sheet Document : </b>
                   <a
-                    href={`${data?.businessFinancialInfo?.value?.profitAndLossDoc?.value}`}
+                    href={`${data?.businessFinancialInfo?.value?.balanceSheetDoc?.value}`}
                     // download={
 
                     // }
@@ -463,6 +346,52 @@ const FilePreviewIndependent = (props) => {
         </>
       ) : null}
 
+      {/* business Vechile info */}
+
+      {data?.businessVehicleInfo ? (
+        <>
+          <>
+            <hr />
+            <div className="col-lg-12">
+              <p className="mb-3 fw-bold">Business Vehicle Informations :</p>
+            </div>
+            {data?.businessVehicleInfo?.value?.registrationDoc?.value ? (
+              <div className="col-lg-6">
+                <p className="mb-1">
+                  <b> Registration Document : </b>
+                  <div>
+                    <a
+                      href={`${data?.businessVehicleInfo?.value?.registrationDoc?.value}`}
+                    >
+                      download file
+                    </a>
+                  </div>
+                </p>
+              </div>
+            ) : null}
+
+            {data?.businessVehicleInfo?.value?.totalMiles?.value ? (
+              <div className="col-lg-6">
+                <p className="mb-1">
+                  <b> Total Miles : </b>
+                  {`${data?.businessVehicleInfo?.value?.totalMiles?.value}`}
+                </p>
+              </div>
+            ) : null}
+
+            {data?.businessVehicleInfo?.value?.usePercentage?.value ? (
+              <div className="col-lg-6">
+                <p className="mb-1">
+                  <b> Useage percentage : </b>
+                  {`${data?.businessVehicleInfo?.value?.usePercentage?.value}`}
+                </p>
+              </div>
+            ) : null}
+          </>
+        </>
+      ) : null}
+
+      {/* income section */}
       {/* income section */}
       {data?.income ? (
         <>
@@ -618,8 +547,49 @@ const FilePreviewIndependent = (props) => {
           ) : null}
         </>
       ) : null}
+
+      {/* dependent section */}
+
+      {data?.dependents?.length > 0 ? (
+        <>
+          <hr />
+          <div className="col-lg-12">
+            <p className="mb-3 fw-bold">Dependents :</p>
+          </div>
+          {data?.dependents?.map((item, index) => {
+            return (
+              <>
+                <div className="col-lg-6">
+                  <p className="mb-1">
+                    <b>Date of Birth </b>
+                    {" : "} {item?.dob?.value}
+                  </p>
+                </div>
+                <div className="col-lg-6">
+                  <p className="mb-1">
+                    <b>Full Name </b>
+                    {" : "} {item?.fullName?.value}
+                  </p>
+                </div>
+                <div className="col-lg-6">
+                  <p className="mb-1">
+                    <b>Relationship </b>
+                    {" : "} {item?.relationship?.value}
+                  </p>
+                </div>
+                <div className="col-lg-6">
+                  <p className="mb-1">
+                    <b>Social Security Number </b>
+                    {" : "} {item?.socialSecurityNumber?.value}
+                  </p>
+                </div>
+              </>
+            );
+          })}
+        </>
+      ) : null}
     </>
   );
 };
 
-export default FilePreviewIndependent;
+export default FilePreviewSmallBusiness;
