@@ -73,7 +73,7 @@ const FilePreviewIndependent = (props) => {
       {data?.dob?.value ? (
         <div className="col-lg-6">
           <p className="mb-1">
-            <b> Date of Birth </b> : {data?.dob?.value.slice(0, 10) || ""}
+            <b> Date of Birth </b> : {data?.dob?.value?.slice(0, 10) || ""}
           </p>
         </div>
       ) : null}

@@ -44,13 +44,7 @@ const FilePreviewSmallBusiness = (props) => {
           </p>
         </div>
       ) : null}
-      {data?.phoneNumber?.value ? (
-        <div className="col-lg-6">
-          <p className="mb-1">
-            <b> Phone Number </b> : {data?.phoneNumber?.value}
-          </p>
-        </div>
-      ) : null}
+
       {data?.dob?.value ? (
         <div className="col-lg-6">
           <p className="mb-1">
@@ -210,7 +204,14 @@ const FilePreviewSmallBusiness = (props) => {
               </p>
             </div>
           ) : null}
-
+          {data?.emailAddress?.value ? (
+            <div className="col-lg-6">
+              <p className="mb-1">
+                <b> Email : </b>
+                {data?.emailAddress?.value}
+              </p>
+            </div>
+          ) : null}
           {data?.businessInfo?.value?.industry?.value ? (
             <div className="col-lg-6">
               <p className="mb-1">
@@ -219,7 +220,6 @@ const FilePreviewSmallBusiness = (props) => {
               </p>
             </div>
           ) : null}
-
           {data?.businessInfo?.value?.type?.value ? (
             <div className="col-lg-6">
               <p className="mb-1">
@@ -228,7 +228,6 @@ const FilePreviewSmallBusiness = (props) => {
               </p>
             </div>
           ) : null}
-
           {data?.businessInfo?.value?.ein?.value ? (
             <div className="col-lg-6">
               <p className="mb-1">
@@ -237,22 +236,23 @@ const FilePreviewSmallBusiness = (props) => {
               </p>
             </div>
           ) : null}
-
-          {data?.businessInfo?.value?.forms1099?.[0].value ? (
+          {data?.businessInfo?.value?.forms1099?.[0]?.value ? (
             <div className="col-lg-6">
               <p className="mb-1">
                 <b> Any Form of 1099 : </b>
                 {data?.businessInfo?.value?.forms1099?.map((item, index) => {
                   return (
-                    <a key={index + 1000} href={`${item?.value}`}>
-                      download file
-                    </a>
+                    <div>
+                      <a key={index + 1000} href={`${item?.value}`}>
+                        download file
+                      </a>
+                    </div>
                   );
                 })}
               </p>
             </div>
           ) : null}
-          {data?.businessInfo?.value?.registrationLetterDoc.value ? (
+          {data?.businessInfo?.value?.registrationLetterDoc?.value ? (
             <div className="col-lg-6">
               <p className="mb-1">
                 <b> Registration Letter Document : </b>
@@ -359,13 +359,11 @@ const FilePreviewSmallBusiness = (props) => {
               <div className="col-lg-6">
                 <p className="mb-1">
                   <b> Registration Document : </b>
-                  <div>
-                    <a
-                      href={`${data?.businessVehicleInfo?.value?.registrationDoc?.value}`}
-                    >
-                      download file
-                    </a>
-                  </div>
+                  <a
+                    href={`${data?.businessVehicleInfo?.value?.registrationDoc?.value}`}
+                  >
+                    download file
+                  </a>
                 </p>
               </div>
             ) : null}
@@ -392,7 +390,7 @@ const FilePreviewSmallBusiness = (props) => {
       ) : null}
 
       {/* income section */}
-      {/* income section */}
+
       {data?.income ? (
         <>
           <hr />
